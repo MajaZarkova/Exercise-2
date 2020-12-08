@@ -16,6 +16,7 @@ sap.ui.define([
          };
          var oModel = new JSONModel(oData);
          this.getView().setModel(oModel);
+         var productsModel = this.getView().getModel("productsModel");
       },
 		onShowHello: function () {
 			MessageToast.show("Hello World");
