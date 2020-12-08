@@ -7,17 +7,17 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("com.exercise2.exercise2.controller.MainView", {
-		onInit : function () {
-         // set data model on view
-         var oData = {
-            recipient : {
-               name : "World"
-            }
-         };
-         var oModel = new JSONModel(oData);
-         this.getView().setModel(oModel);
-         var productsModel = this.getView().getModel("productsModel");
-      },
+		onInit: function () {
+			// set data model on view
+			var oData = {
+				recipient: {
+					name: "World"
+				}
+			};
+			var oModel = new JSONModel(oData);
+			this.getView().setModel(oModel);
+			var productsModel = this.getView().getModel("productsModel");
+		},
 		onShowHello: function () {
 			MessageToast.show("Hello World");
 		},
@@ -41,10 +41,15 @@ sap.ui.define([
 			});
 		},
 
-		onCloseDialog : function () {
+		onCloseDialog: function () {
 			// note: We don't need to chain to the pDialog promise, since this event-handler
 			// is only called from within the loaded dialog itself.
 			this.byId("helloDialog").close();
+		},
+
+		handleSelectChange: function (oEvent) {
+			var mode = oEvent.getParameter("selectedItem").getKey();
+			this.byId("ProductList").setMode(mode);
 		}
 	});
 });
