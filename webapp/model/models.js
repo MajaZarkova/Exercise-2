@@ -14,8 +14,8 @@ sap.ui.define([
 
 		createProductsModel: function () {
 			var path = jQuery.sap.getModulePath(
-				'com.exercise2.exercise2',
-				'/model/products.json'
+				"com.exercise2.exercise2",
+				"/model/products.json"
 			);
 
 			var productsModel = new JSONModel(path);
